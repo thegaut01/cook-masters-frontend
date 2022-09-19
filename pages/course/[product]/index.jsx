@@ -9,12 +9,12 @@ import Faq from '/components/faq'
 import Slider from '/components/slider'
 import Feature from '/components/feature'
 
-import About from './components/about'
-import Samples from './components/samples'
-import Cta from './components/cta'
-import Sponsors from './components/sponsors'
-import Sections from './components/sections'
-import Upcoming from './components/upcoming'
+import About from '/components/product-components/about'
+import Samples from '/components/product-components/samples'
+import Cta from '/components/product-components/cta'
+import Sponsors from '/components/product-components/sponsors'
+import Sections from '/components/product-components/sections'
+import Upcoming from '/components/product-components/upcoming'
 
 
 import staticData from '/public/data-static.js'
