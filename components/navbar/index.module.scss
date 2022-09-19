@@ -1,0 +1,104 @@
+
+@import "/styles/config.scss";
+
+.navbar {
+   position: sticky; top: 0;
+   @media (max-width: $tabletBreakpoint) { position: fixed; top: 0; width: 100%;}
+   &>div { display: flex; align-items: center;}
+   padding: $padInline 0;
+   margin-bottom: 8vh;
+   z-index: 5;
+   
+   background: linear-gradient(180deg, $lghtBkg, rgba($lghtBkg, .6), transparent 90%);
+   pointer-events: none; &>div>* { pointer-events: all;} //click trough navbar body
+
+   .logo {
+      display: flex; align-items: center;
+      font-size: 1.3rem;
+      font-family: $fontDisplay;
+
+      svg {
+         @include logoIcon;
+      }
+   }
+
+   .menu {
+      display: flex;
+      height: $btnHeight; width: $btnHeight;
+      margin-right: $padElm;
+
+      border-radius: $borS;
+      border: $line;
+      background-color: $grey;
+      @include subtleshadow($dark, .05);
+
+      .menubtn {
+         margin: auto;
+         height: 1rem; width: 1rem;
+         position: relative;
+         
+         .dot {
+            position: absolute;
+            height: 5px; width: 5px;
+            @media (max-width: $phoneBreakpoint) { height: 4px; width: 4px; } 
+            
+            border-radius: 99px;
+            background-color: $dark;
+            transition: .8s;
+            will-change: width;
+            
+            &:nth-child(1) {
+               top: 0; left: 0;
+               transform: rotate(45deg);
+               transform-origin: 2.5px 2.5px;
+               @media (max-width: $phoneBreakpoint) { transform-origin: 2px 2px; } 
+            }
+            &:nth-child(2) {
+               top: 0; right: 0;
+            }
+            &:nth-child(3) {
+               bottom: 0; right: 0;
+            }
+            &:nth-child(4) {
+               bottom: 0; left: 0;
+               transform: rotate(-45deg);
+               transform-origin: 2.5px calc(100% - 2.5px);
+               @media (max-width: $phoneBreakpoint) { transform-origin: 2px calc(100% - 2px); } 
+            }
+            
+         }
+      }
+      &:hover .menubtn .line {
+         width: 100%;
+      }
+
+   }
+
+   .ctabtn {
+      margin-left: auto;
+      padding: 0 $btnPad;
+      
+      color: $lght;
+      background: $btnBkg;
+      @include subtleshadow($accn, .5);
+      
+   }
+
+   .logbtn {
+      height: $btnHeight *1.03; width: $btnHeight *1.03;
+      @media(max-width: $phoneBreakpoint) { display: none; }
+      margin-left: $padElm;
+      
+      background-color: $grey;
+      border: $line;
+      @include subtleshadow($dark, .05);
+      
+      svg {
+         transform: translate(10%,10%);
+         height: 1.4rem;
+         opacity: .5;
+      }
+   }
+}
+
+

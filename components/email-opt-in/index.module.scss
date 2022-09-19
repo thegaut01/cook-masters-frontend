@@ -1,0 +1,53 @@
+
+@import "/styles/config.scss";
+
+.form {
+   max-width: 44rem;
+   margin-left: auto;
+   padding-left: $padMin;
+
+   .label {
+      h2 {
+         margin-right: 1rem;
+         svg {
+            margin-left: $padMin; padding-top: .2em;
+            opacity: .8;
+         }
+      }
+      p {
+         @include fontSizeS;
+         max-width: 35ch;
+         margin-left: .5em;
+      }
+   }
+
+   form {
+      display: flex;
+      @media (max-width: $phoneBreakpoint) {
+         flex-direction: column; gap: $padMin; align-items: flex-start;
+
+         &>button { margin-left: .2em !important; }
+      }
+      
+      input[type=email] {
+         height: $btnHeight;
+         padding: 0 $btnPad;
+         border-radius: $borS;
+         
+         border: $line;
+         @include subtleshadow($dark, .15);
+      }
+      
+      button {
+         height: $btnHeight;
+         padding: 0 $btnPad;
+         margin-left: $padElm;
+         
+         background: $btnBkg;
+         color: $lght;
+         @include subtleshadow($accn, .5);
+      }
+
+   }
+
+}

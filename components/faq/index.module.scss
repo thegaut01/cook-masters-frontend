@@ -1,0 +1,76 @@
+
+@import "/styles/config.scss";
+
+.accord {
+   max-width: $tabletBreakpoint;
+   margin: 0 auto;
+}
+
+.label {
+   display: flex; align-items: center; justify-content: space-between;
+   @include elm; background-color: initial;
+   h2 { padding-bottom: 0px; line-height: 1em;}
+   svg { height: 2rem; opacity: .6;}
+}
+
+.faq {
+   position: relative;
+   @include elm; background-color: $lghtBkg;
+
+   input {
+      position: absolute; top: 0; left: 0;
+      z-index: 2;
+      height: 100%; width: 100%;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked {
+         &~ .body{
+            max-height: 40vh;
+         }
+
+         &~ .head .expand svg{
+            transform: rotate(-135deg);
+         }
+      }
+   }
+
+   .head {
+      display: flex; align-items: center;
+      padding: 0 .2em;
+      
+      .title {
+         @include fontSizeEm;
+         line-height: 2rem;
+         opacity: .8;
+      }
+
+      .icon {
+         @include icon;
+      }
+
+      .expand {
+         margin-left: auto; margin-right: .2em;
+
+         svg {
+            height: 1.2rem;
+            opacity: .7;
+            transition: transform .5s;
+         }
+      }
+
+   }
+
+   .body {
+      max-height: 0vh;
+      overflow: hidden;
+      will-change: max-height;
+      z-index: -1;
+      
+      transition: all .3s;
+      border-radius: 0 0 inherit inherit;
+
+      p{ padding: $padMin; max-width: initial;}
+   }
+
+}

@@ -1,0 +1,138 @@
+
+@import "/styles/config.scss";
+
+.hero {
+   position: relative;
+   z-index: 1;
+   pointer-events: none;
+   min-height: 38rem;
+   
+   .body {
+      padding-bottom: $padBlock;
+      display: flex; flex-direction: column;
+      
+      h1 {
+         max-width: $deskBreakpoint /2;
+         padding-bottom: $padMin;
+      }
+
+      p {
+         max-width: 50ch;
+         margin-top: $padInline; margin-left: .2em;
+      }
+
+   }
+
+   .scroll {
+      position: absolute; bottom: 0; left: 50%;
+      @media (max-width: $deskBreakpoint) { display: none; }
+      transform: translateX(-50%) rotate(90deg) scale(1.2);
+      
+      @include link; border: none; box-shadow: initial;
+      background: linear-gradient(90deg, transparent 20%, rgba($lght,1));
+      
+      will-change: filter transform;
+      animation: float 6s ease-in-out infinite;
+      
+      strong { margin-right: .3em; opacity: .8; }
+      
+      @keyframes float {
+         0% {
+            filter: drop-shadow( 5px 0px 20px rgba($dark, .1));
+            transform: translateX(-50%) translateY(0px) rotate(90deg) scale(1.2);
+         }
+         50% {
+            filter: drop-shadow( 25px 0px 20px rgba($dark, .1));
+            transform: translateX(-50%) translateY(-20px) rotate(90deg) scale(1.2);
+         }
+         100% {
+            filter: drop-shadow( 5px 0px 20px rgba($dark, .1));
+            transform: translateX(-50%) translateY(0px) rotate(90deg) scale(1.2);
+         }
+      }
+
+   }
+   
+   .heroart {
+      position: absolute; top: -5%; left: 55%;
+      z-index: -1;
+      pointer-events: all;
+      cursor: pointer;
+      transform-origin: 0% 0%;
+      @media(max-width: $tabletBreakpoint) { transform: translate(-0%, -15%) scale(.7); opacity: .9;}
+
+      .img {
+         position: relative;
+         height: 38rem; width: 38rem;
+
+         border-radius: 50%;
+         border: $line;
+         @include overlay($grey);
+         @include itemshadow($dark, .4);
+
+         img { border-radius: 50%;}
+      }
+
+      &::before {
+         content: "";
+         pointer-events: none;
+         position: absolute; top: 0; left: 0;
+         height: 100%; width: 300%;
+         transform-origin: 19rem 50%; 
+         transform: scale(1.25) rotate(-55deg);
+         z-index: -1;
+         
+         border-radius: 9999px;
+         background-color: $lght;
+         @include itemshadow($dark, .05);
+      }
+      
+      .btn {
+         @include playbtn;
+      }
+
+   }
+
+   .info {
+      display: flex; 
+      
+      li {
+         position: relative;
+         margin-right: $padInline *1.2;
+         opacity: .8;
+
+         strong { 
+            display: block;
+            @include fontSizeL;
+            font-family: $fontDisplay;
+            white-space: nowrap;
+
+            div { // the icon
+               position: relative;
+               display: inline-block;
+               height: 1em; width: 1.3em;
+               margin-right: $padMin /1.5;
+               transform: translateY(10%);
+            }
+         }
+
+         span {
+            margin-left: 0.2em;
+            font-size: 1.1em;
+         }
+
+         &:after {
+            content: "";
+            position: absolute; top: 50%; right: 0;
+            transform: translate($padInline *.7,-50%);
+            height: 40%; width: 2px;
+            background-color: $accn;
+         }
+         &:last-child::after{
+            display: none;
+         }
+
+      }
+   }
+
+}

@@ -1,0 +1,106 @@
+
+@import "./config.scss";
+
+.modalanim-enter {
+    opacity: 0;
+}
+.modalanim-enter-active {
+    opacity: 1;
+}
+.modalanim-exit {
+    opacity: 1;
+}
+.modalanim-exit-active {
+    opacity: 0;
+}
+.modalanim-enter-active,
+.modalanim-exit-active{
+    transition: opacity 500ms;
+}
+
+
+.disheanim-enter-active, .disheanim-exit-active, .disheanim-enter, .disheanim-exit {
+   transform-origin: 100% 0;
+   @media (max-width: $phoneBreakpoint) { transform-origin: 0% 100%; }
+}
+.disheanim-enter {
+   opacity: 0;
+   transform: rotate(100deg) translateY(-25%);
+}
+.disheanim-enter-active {
+   opacity: 1;
+   transform: rotate(0deg) translateX(0%);
+   transition: all 400ms ease-out;
+}
+.disheanim-exit {
+   opacity: 1;
+   transform-origin: 100% 0%;
+   transform: rotate(0deg) translateX(0%);
+}
+.disheanim-exit-active {
+   opacity: 0;
+   transform:rotate(-100deg) translateY(25%);
+   transition: all 400ms ease-in;
+}
+
+
+.dishetextanim-enter {
+    opacity: 0;
+    transform: translateX(5%);
+}
+.dishetextanim-enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.dishetextanim-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+.dishetextanim-exit-active {
+    opacity: 0;
+    transform: translateX(-5%);
+}
+.dishetextanim-enter-active,
+.dishetextanim-exit-active{
+   transition: all 150ms ease-in-out;
+}
+
+
+.fadeanim-enter {
+   opacity: 0;
+}
+.fadeanim-enter-active {
+   opacity: 1;
+}
+.fadeanim-exit {
+   opacity: 1;
+}
+.fadeanim-exit-active {
+   opacity: 0;
+}
+.fadeanim-enter-active,
+.fadeanim-exit-active{
+   transition: all 300ms ease-in;
+}
+
+
+.pageanim-enter {
+   opacity: 0;
+   transform: translateX(10%);
+}
+.pageanim-enter-active {
+   opacity: 1;
+   transform: translateX(0%);
+}
+.pageanim-exit {
+   opacity: 0;
+   transform: translateX(0%);
+}
+.pageanim-exit-active {
+   opacity: 0;
+   transform: translateX(-10%);
+}
+.pageanim-enter-active,
+.pageanim-exit-active{
+   transition: all 300ms ease-out;
+}

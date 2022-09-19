@@ -1,0 +1,22 @@
+
+@import "/styles/config.scss";
+
+.grid {
+   // border: 1px dashed darksalmon;
+   display: flex; flex-wrap: wrap; gap: $padInline;
+   position: relative;
+   @media(min-width: $tabletBreakpoint) { padding: 0 $padBlock; }
+
+   //generate col-n classes
+   @for $i from 1 to 12 {
+      :global(.col-#{$i}) {
+         flex: 1 1 ($tabletBreakpoint - 100px) * $i/12;
+      }
+   }
+
+   :global(.gridcard) {
+      flex: 1 0 330px;
+      // max-width: 350px;
+   }
+
+}

@@ -1,0 +1,55 @@
+
+@import "/styles/config.scss";
+
+.text {
+   align-self: center;
+
+   .text_wrap {
+      width: fit-content;
+      margin-left: $padInline;
+      
+      h2 {white-space: pre-line;}
+      h4 { opacity: .75; }
+      p { max-width: 40ch; }
+
+   }
+
+   .link {
+      @include link;
+   }
+
+}
+
+.media {
+
+   .img, .vid {
+      position: relative;
+      padding-top: 65%;
+      
+      border-radius: $borL;
+      @include overlay;
+      @include itemshadow($dark, .5);
+
+   }
+   .img img { border-radius: $borL;}
+
+   .vid {
+
+      video {
+         position: absolute; top: 0; left: 0;
+         width: 100%; height: 100%;
+         object-fit: cover;
+         border-radius: inherit;
+      }
+
+      .btn {
+         $playBtnHeight: 35%;
+         @include playbtn;
+         width: $playBtnHeight /1.7; padding-top: $playBtnHeight /1.7;
+         span, &::before { font-size: 1.5rem;}
+      }
+         
+   }
+   
+}
+

@@ -1,0 +1,14 @@
+
+@import "/styles/config.scss";
+
+.sponsors {
+   max-width: $tabletBreakpoint; margin: auto; margin-top: $padInline *1.5;
+   display: flex; justify-content: space-between;
+   opacity: .3;
+
+   .sponsor {
+      position: relative;
+
+      height: 2.5rem; width: 5rem;
+   }
+}

@@ -1,0 +1,113 @@
+
+@import "/styles/config.scss";
+
+.footer {
+   position: relative;
+   @include fontSizeS;
+   padding: $padBlock*1.5 0;
+
+   background-color: $grey;
+
+   .wrap {
+      display: flex; 
+
+      &>div {
+         flex: 1;
+      }
+      @media (max-width: $tabletBreakpoint) { flex-direction: column-reverse; gap: $padBlock}
+   }
+
+   .brand {
+      position: relative;
+      svg { margin-right: .2em; transform: translateY(10%);}
+
+      .logo {
+         font-size: 1.1rem;
+         line-height: 1.7;
+         padding-bottom: $padMin;
+         font-family: $fontDisplay;
+      }
+      
+      .about {
+         opacity: .7;
+         font-size: .9em;
+      }
+
+      .copy {
+         margin-top: $padMin;
+         opacity: .9;
+      }
+
+      .payment {
+         position: absolute; bottom: 0; left: 0;
+         padding-top: $padElm;
+         transform: translateY(100%);
+
+         svg { 
+            fill: initial;
+            height: 1.2rem;
+            margin-right: .5rem;
+            filter: grayscale(.8);
+         }
+      }
+   }
+
+   .links {
+      display: flex; justify-content: space-between;
+      @media (max-width:$tabletBreakpoint) { flex-direction: column; gap: $padElm;}
+
+      .title {
+         @include fontSizeEm;
+         padding-bottom: $padMin;
+      }
+      li {
+         line-height: 2;
+      }
+   }
+}
+
+.top {
+   position: relative;     
+   height: $borL; width: 100%;
+   z-index: 2;
+
+   background-color: $grey;
+
+   .l1 {
+      position: absolute; top: 0; left: 0;
+      height: 100%; width: 100%;
+      
+      border-radius: 0 0 $borL $borL;
+      background-color: $lghtBkg;
+
+      &::after {
+         content: "";
+         position: absolute; top: 0; left: 0;
+         height: 100%; width: 100%;
+         
+         box-shadow: rgba($dark, .2) 3px 10px 12px;
+         border-radius: inherit;
+         background: url("../../public/texture.png");
+         opacity: .3;
+      }
+
+   }
+}
+
+.bottom {
+   padding: $padElm 0;
+   @include fontSizeS;
+
+   background-color: darken($grey, 2%);
+
+   span, em {
+      font-family: $fontSecondary;
+      text-transform: capitalize;
+   }
+   svg {
+      margin-right: 0.2em;
+      height: 0.8em;
+      transform: translateY(10%);
+   }
+
+}

@@ -1,0 +1,25 @@
+
+@import "/styles/config.scss";
+
+.slider{
+   position: relative;
+   overflow: visible !important; // bugs out on smaller screens
+   padding-bottom: $padMin+$btnHeight !important; 
+
+   .navigation {
+      position: absolute; bottom: -$padMin; right: .3rem;
+      @include arrowNav;
+   }
+}
+
+.label {
+   @include card;
+
+   .wrap {
+
+      .link { 
+         position: absolute; bottom: $padElm *1.2; right: $padElm *1.2;
+         @include link;
+      }
+   }
+}

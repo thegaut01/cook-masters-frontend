@@ -1,0 +1,101 @@
+
+@import "./config.scss";
+
+//################# TEXT
+html { @include fontRootConfig; color: $dark; }
+body { @include fontSizeM; }
+// html,body { height: 100%; overflow-x: hidden !important;} // REQUIRED TO KEEP STICKY NAV & CTA WORKING !! 
+body { overflow-x: hidden !important; }
+@media (max-width: $tabletBreakpoint) { html{ overflow-x: hidden !important; } body{ padding-top: $padBlock *3; }}
+
+h1 {
+   @include fontSizeXxl;
+   padding-bottom: $padMin;
+   @include textgrad;
+   width: fit-content;
+}
+h2 {
+   @include fontSizeXl;
+   padding-bottom: $padMin;
+   @include textgrad;
+   width: fit-content;
+}
+h3 {
+   @include fontSizeL;
+   padding-bottom: $padMin;
+ 
+}
+h4 {
+   @include fontSizeEm;
+   padding-bottom: $padMin;
+ 
+}
+p {
+   line-height: 1.75;
+   padding-bottom: $padMin;
+   max-width: 60ch;
+   opacity: .9;
+   text-overflow: ellipsis;
+}
+
+svg {
+   height: 1em;
+   fill: $dark;
+}
+
+br {
+   content: "" !important;
+   display: block !important;
+   margin-bottom: $padSec !important;
+}
+
+button {
+   height: $btnHeight;
+   font-size: $btnFontSize;
+   font-family: $fontSecondary;
+   text-transform: capitalize;
+   cursor: pointer;
+   
+   border-radius: $borS;
+   
+}
+
+//################# GLOBAL
+
+.swiper-button-disabled {
+   opacity: .5;
+   background-color: #eee !important;
+}
+.swiper-scrollbar-horizontal {
+   display: block !important;
+   margin-left: auto;
+   margin-right: auto;
+   left: 0;
+   right: 0;
+   bottom: 1rem !important;
+   max-width: $tabletBreakpoint !important;
+
+   background-color: rgba($grey, .7) !important;
+   opacity: .7;
+
+   .swiper-scrollbar-drag {
+      background-color: darken($accn, 20%);
+   }
+}
+
+::selection {
+    color: inherit;
+    background: $accn;
+}
+::-moz-selection {
+    color: inherit;
+    background: $accn;
+}
+
+#nprogress .bar {
+  background: $btnBkg !important;
+  height: 4px !important;
+}
+#nprogress .peg {
+   box-shadow: 0 0 10px $accn, 0 0 5px $accn !important;
+}

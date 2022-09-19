@@ -1,0 +1,6 @@
+PROJECT_NOTES::
+
+- calc stats on time basis 
+- comment enter animation
+- 404
+- nav cta should dynamically change the target

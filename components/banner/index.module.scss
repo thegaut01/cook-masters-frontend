@@ -1,0 +1,52 @@
+
+@import "/styles/config.scss";
+
+.banner {
+   position: relative;
+   display: flex; justify-content: space-between;
+
+   .copy {
+      margin-top: auto; margin-bottom: $padBlock;
+
+      p { 
+         font-size: .9rem;
+         max-width: 50ch;
+      }
+   }
+   
+   .img {
+      position: relative;
+      width: 50vw; padding-top: 45%;
+      margin-left: $padElm;
+      margin-right: calc(max(calc(($padInline +  (100vw - ($deskBreakpoint + 50px)) / 2)), $padInline) *-1);;
+
+      border-radius: $borL 0 0 $borL;
+      @include overlay;
+      @include itemshadow($dark, .5);
+
+      img { border-radius: $borL 0 0 $borL;}
+   }
+
+   .children {
+      display: flex;
+      margin-top: $padElm;
+
+      @media (max-width: $phoneBreakpoint) { flex-direction: column; gap: $padInline;}
+
+      h4 { padding-bottom: 0.3em;}
+      &>div { width: 100%; }
+      
+      strong {  
+         display: inline-block;  
+         padding-bottom: 0.5em;
+         max-width: 22ch;
+
+         font-size: 1.1rem;
+         font-family: $fontSecondary; 
+         color: mix($dark, orchid, 60% );
+         // color: ;
+         opacity: .8;
+     }
+   }
+
+}

@@ -1,0 +1,77 @@
+
+@import "/styles/config.scss";
+
+.modal {
+   position: fixed; top: 0; left: 0; 
+   height: 100%; width: 100%;
+   display: flex;
+   z-index: 4;
+
+   background-color: rgba($lght, .4);
+   backdrop-filter: blur(15px);
+
+   .tip {
+      position: absolute; bottom: 0; right: 0;
+      margin: 0 $padInline  *1.2 $padBlock 0;
+
+      @include fontSizeS;
+      font-family: $fontSecondary;
+      opacity: .5;
+
+      svg {
+         height: .8em;
+         transform: translateY(10%);
+         margin-right: 0.1em;
+      }
+   }
+
+   .container {
+      margin: auto; 
+      padding-bottom: $padInline;
+      // outline: 1px dashed sandybrown;
+      
+      .menu {
+         margin-top: 6vh;
+         padding-right: $padElm;
+         .entry {
+            margin-bottom: .7em;
+            
+            font-size: 4vh;
+            color: mix($dark, orchid, 80%);
+            
+            .index {
+               margin-right: .2em;
+               opacity: .8;
+            }
+            
+            .label {
+               font-family: $fontSecondary;
+            }
+         }
+         
+      }
+      
+      .vid {
+         width: 100vw; max-width: $tabletBreakpoint;
+         padding: 0 $padInline;
+
+         .vidwrapper {
+            position: relative;
+            width: 100%; padding-top: 62.5%;
+            
+            background-color: lightgrey;
+            border-radius: $borL;
+            border: $line;
+            @include itemshadow($grey, .5);
+            
+            video {
+               position: absolute; top: 0; left: 0;
+               height: 100%; width: 100%;
+               object-fit: cover;
+
+               border-radius: inherit;
+            }
+         }
+      }
+   }
+}

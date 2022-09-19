@@ -1,0 +1,94 @@
+&::after {
+   content: "play";
+   position:absolute; top:-100%; left:0;
+   font-size:.65em; letter-spacing:1px;
+   opacity: .8;
+}
+
+// @supports (-webkit-background-clip: text) {
+//     background: url("../public/noise.png") $lght;
+//     -webkit-text-fill-color: transparent;
+//     -webkit-background-clip: text;
+// }
+
+// $cardoverlay: inset 0 0 10px 2000px rgba($lght, 0.2);
+
+// display: flow-root;
+
+// $cancelmargin: calc(max(calc(($mrgi +  (100vw - ($max + 50px)) / 2)), $mrgi) *-1);
+
+:root {
+    --swiper-navigation-size: 2em !important;
+    --swiper-theme-color: $dark !important;
+}
+.swiper-button-prev {
+    left: 1em !important;
+}
+.swiper-button-next {
+    right: 1em !important;
+}
+
+@media (min-width: $desk) {}
+
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Yeseva One', cursive;
+
+outline: 1px dashed lightblue;
+
+// autoplay={{delay: 2800, disableOnInteraction: true,}}
+
+function useWindowDimensions() {
+    const hasWindow = typeof window !== 'undefined';
+  
+    function getWindowDimensions() {
+        const height = hasWindow ? window.innerHeight : null;
+        const width = hasWindow ? window.innerWidth : null;
+        return [height,width,];
+    }
+  
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  
+    useEffect(() => {
+        if (hasWindow) {
+            function handleResize() {
+                setWindowDimensions(getWindowDimensions());
+            }
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, [hasWindow]);
+  
+    return windowDimensions;
+
+}
+const brk = winWidth >= 1200;
+const [winHeight, winWidth] = useWindowDimensions();
+
+// ::-webkit-scrollbar {
+//     width: 14px;
+// }
+
+// ::-webkit-scrollbar-track {
+//     background-color: $dark;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background-color: $lght;
+//     border: 1px solid $dark;
+//     border-radius: 99px;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//     background-color: $accn;
+// }
+
+background-color: aliceblue;
+background-color: honeydew;
+background-color: ivory;
+background-color: mintcream;
+background-color: snow;
+background-color: floralwhite;
+background-color: whitesmoke;
+background-color: ghostwhite;

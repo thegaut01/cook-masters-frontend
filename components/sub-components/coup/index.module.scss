@@ -1,0 +1,20 @@
+
+@import "/styles/config.scss";
+
+.coup {
+   width: fit-content;
+   margin-left: .5em; margin-bottom: .2em;
+   z-index: 3;
+   
+   padding: .4em .8em;
+   border-radius: 99px;
+   @include fontSizeS; font-family: $fontPrimary;
+   background-color: snow;
+
+   color: rgba($dark, .8);
+   border: 1px solid rgba(sandybrown,.4);
+
+   svg {  transform: translateY(15%); margin-right: 0.2em;}
+   strong { color: lighten($dark, 10%); opacity: .8;}
+   
+}

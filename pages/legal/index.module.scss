@@ -1,0 +1,29 @@
+
+@import "/styles/config.scss";
+
+
+.tos {
+   width: 100%; max-width: fit-content;
+   margin: auto;
+
+   .content {
+      margin-bottom: $padBlock; margin-left: $padElm;
+      list-style: decimal;
+      
+      li {
+         margin-bottom: .5em;
+         font-size: .9em;
+         text-decoration: underline;
+      }
+   }
+   
+   h1 { margin-left: -.1em; padding-bottom: 0.5em; background-color: red;}
+   article {
+      padding-bottom: $padBlock;
+
+      h2 { font-family: $fontSecondary;}
+      p { max-width: 70ch; white-space: pre-line;}
+   }
+   
+}
+

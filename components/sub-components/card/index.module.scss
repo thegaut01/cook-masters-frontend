@@ -1,0 +1,115 @@
+
+@import "/styles/config.scss";
+
+$headHeight: 66%;
+$headPadBl: 3%;
+$headPadIn: 2.5%;
+
+.card {
+   @include card;
+   overflow: hidden;
+
+   .wrap {
+      .head {
+         position: relative;
+         display: flex; flex-direction: column;
+         height: $headHeight;
+         z-index: 1;
+         color: $lght;
+         
+         .img {
+            position: absolute; top: $headPadBl; left: $headPadIn;
+            height: (100% - $headPadBl ); width: (100% - $headPadIn *2);
+            z-index: -1;
+
+            border-radius: $borM*1.2;
+            overflow: hidden;
+            @include overlay;
+            box-shadow: -4px 10px 44px rgba($dark, .1),
+         }
+      
+         .author {
+            @include profile;
+            color: $lght;
+         }
+
+         .discount {
+            position: absolute; top: 0; right: 0;
+            margin: $padElm *1.4 $padElm *1.2;
+            
+            @include fontSizeS;
+            @include chip;
+            
+            strong {
+               font-family: $fontSecondary;
+            }
+         }
+         
+         .info {
+            display: flex; align-items: flex-end;
+            margin-top: auto;
+            line-height: 1em;
+   
+            .link {
+               height: $btnHeight *1.1; width: $btnHeight *1.1;
+               position: absolute; bottom: 0; right: $padElm;
+               transform: translate(-25%, 40%);
+               
+               border-radius: 50%;
+               background: $btnBkg;
+               @include subtleshadow($accn, .6);
+               svg {fill: $grey; transform: translate(10%,15%);}
+            }
+   
+            .pricing {
+               flex: 1;
+               margin: .15em .3em;
+   
+               &>div {
+                  font-family: $fontSecondary;
+                  font-size: 2rem;
+   
+                  span {
+                     padding: 0 0.2em 0 0.1em;
+                     color: $grey;
+                  }
+
+                  mark {
+                     background-color: initial;
+                     color: darken($accn, 8%);
+                  }
+   
+                  del {
+                     font-size: .5em;
+                     opacity: .8;
+                  }
+   
+               }
+            }
+         }
+      }
+      
+      .body {
+         display: flex; flex-direction: column; justify-content: flex-end;
+         height: 100% - $headHeight;
+         
+         h4 { @include fontSizeXl; font-size: 2rem; @include textgrad; padding-bottom: $headPadBl;}
+         p { @include fontSizeS; }
+         
+         .stats {
+            display: flex; align-items: flex-end; gap: $padMin;
+            margin-bottom: .3rem;
+            svg { transform: translate(-.1em ,10%); font-size: inherit}
+   
+            .stat {
+               @include fontSizeS;
+               font-family: $fontSecondary;
+               opacity: .8;
+            }
+   
+         }
+
+      }
+
+   }
+}

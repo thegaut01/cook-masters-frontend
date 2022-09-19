@@ -1,0 +1,26 @@
+
+@import "/styles/config.scss";
+
+.msg {
+   p {
+      margin-left: $padElm *1.2;
+
+      color: mix($dark, orchid, 80%);
+      font-size: 1.25rem !important;
+      font-family: $fontSecondary;
+
+      svg {
+         transform: translateY(15%);
+         margin-left: .2em;
+      }
+   }
+}
+
+.link {
+   position: absolute; top: 0; left: 0;
+   @include link;
+   strong { padding-bottom: initial !important;}
+   span { transform: rotate(180deg); }
+   margin-top: $padElm;
+   margin-left: .5em;
+}

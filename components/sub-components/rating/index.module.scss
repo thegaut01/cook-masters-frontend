@@ -1,0 +1,69 @@
+
+@import "/styles/config.scss";
+
+.rating {
+   display: flex; align-items: flex-end;
+   width: fit-content;
+   margin-bottom: $padMin; 
+   transform-origin: 0 0;
+   @include fontSizeS;
+
+   font-family: $fontSecondary; 
+   &>div>span{ opacity: .7; } //the numbers
+   
+   svg {
+      font-size: initial;
+      transform: translateY(15%);
+   }
+   
+   .avg {
+      display: flex;
+
+      span {
+         align-self: flex-end;
+         padding-left: .2em;
+      }
+
+      $starFill: mix($accn, orange, 80%);
+      .star {
+         svg { height: 1.2rem; fill: $starFill;}
+      }
+
+      .stars {
+         .bkg {
+            position: relative;
+            white-space: nowrap;
+            
+            svg {
+               height: 1.1em;
+               width: 1.1em;
+               fill: lightgray;
+            }
+            
+            .frg {
+               position: absolute;
+               top: 0;
+               left: 0;
+               height: 100%;
+               white-space: nowrap;
+               overflow: hidden;
+               
+               svg {
+                  fill: $starFill;
+               }
+            }
+            
+         }
+
+      }
+   
+   }
+   
+   .stat {
+      margin-left: $padMin;
+      svg { transform: translate(-.1em ,10%); font-size: inherit; height: 0.9em; opacity: .9;}
+
+   }
+   
+
+}

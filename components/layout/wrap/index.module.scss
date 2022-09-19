@@ -1,0 +1,10 @@
+
+@import "/styles/config.scss";
+
+.pagewrap {
+   max-width: $deskBreakpoint;
+   margin: 0 auto;
+   @media (max-width: $deskBreakpoint) {
+      margin: 0 $padInline;
+   }
+}

@@ -1,0 +1,30 @@
+
+@import "/styles/config.scss";
+
+.article {
+   max-width: $tabletBreakpoint;
+   margin: auto;
+   padding-bottom: $padBlock;
+   
+   .img {
+      position: relative;
+      width: 100%; padding-top: 60%;
+      margin: $padBlock 0;
+      
+      border-radius: $borL;
+      @include overlay;
+      @include itemshadow;
+
+      img {border-radius: $borL;}
+   }
+   
+   article {
+      padding-left: $padElm;
+   }
+
+   .more { 
+      margin-top: $padBlock;
+      @include link;
+      svg { transform: rotate(180deg) translateX(10%);}
+   }
+}
